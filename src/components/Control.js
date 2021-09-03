@@ -10,7 +10,7 @@ class Control extends Component {
                 }.bind(this)}>create</a></li>
                 <li><a href="/update" onClick={function(e){
                     e.preventDefault();
-                    this.props.onChangeMode('create');
+                    this.props.onChangeMode('update');
                 }.bind(this)}>update</a></li>
                 <li><a href="/delete" onClick={function(e){
                     e.preventDefault();
