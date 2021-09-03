@@ -1,7 +1,8 @@
 
 import { Component } from 'react';
 import TOC from './components/TOC.js'
-import Content from './components/Content.js'
+import ReadContent from './components/ReadContent.js'
+import CreateContent from './components/CreateContent.js'
 import Subject from './components/Subject.js'
 import Control from './components/Control.js'
 import './App.css';
@@ -24,10 +25,11 @@ class App extends Component {
 
   render() {
     console.log('App render');
-    var _title, _desc = null; //기본 값 없음
+    var _title, _desc, _article = null;
     if(this.state.mode === 'welcome') {
       _title = this.state.welcome.title;
       _desc = this.state.welcome.desc;
+      _article = <ReadContent title={_title} desc={_desc}></ReadContent>
     } else if(this.state.mode === 'read') {
       var i = 0;
       while(i < this.state.contents.length){
@@ -39,6 +41,9 @@ class App extends Component {
         }
         i = i + 1;
       }
+        _article = <ReadContent title={_title} desc={_desc}></ReadContent>
+      }else if(this.state.mode === 'create'){
+        _article = <CreateContent></CreateContent>
     }
     return (
       <div className="App">
@@ -64,7 +69,7 @@ class App extends Component {
           }.bind(this)}
           data={this.state.contents}
         ></TOC>
-        <Content title={_title} desc={_desc}></Content>
+        {_article}
       </div>
     );
   }
