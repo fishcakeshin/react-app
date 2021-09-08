@@ -42,7 +42,7 @@ class App extends Component {
       _article = <ReadContent title={_title} desc={_desc}></ReadContent>
       }else if(this.state.mode === 'read') {
         var _content = this.getReadContent();
-        _article = <ReadContent title={_content._title} desc={_content._desc}></ReadContent>
+        _article = <ReadContent title={_content.title} desc={_content.desc}></ReadContent>
       }else if(this.state.mode === 'create'){
         _article = <CreateContent onSubmit={function(_title, _desc){
           //add content to this.state.contents
