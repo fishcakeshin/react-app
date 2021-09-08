@@ -12,10 +12,10 @@ class Control extends Component {
                     e.preventDefault();
                     this.props.onChangeMode('update');
                 }.bind(this)}>update</a></li>
-                <li><a href="/delete" onClick={function(e){
+                <li><input onClick={function(e){
                     e.preventDefault();
                     this.props.onChangeMode('delete');
-                }.bind(this)}>delete</a></li>
+                }.bind(this)} type="button" value="delete"></input></li>
             </ul>
         );
     }
