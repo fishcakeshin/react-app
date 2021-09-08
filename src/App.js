@@ -86,11 +86,6 @@ class App extends Component {
           }.bind(this)}
           >
         </Subject>
-        <Control onChangeMode={function(_mode){ 
-          this.setState({
-            mode: _mode
-          });
-        }.bind(this)}></Control>
         <TOC 
           onChangePage={function(id){
             this.setState({
@@ -100,6 +95,11 @@ class App extends Component {
           }.bind(this)}
           data={this.state.contents}
         ></TOC>
+        <Control onChangeMode={function(_mode){ 
+          this.setState({
+            mode: _mode
+          });
+        }.bind(this)}></Control>
         {this.getContent()}
       </div>
     );
