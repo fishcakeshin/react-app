@@ -57,7 +57,7 @@ class App extends Component {
         }.bind(this)}></CreateContent>
       }else if(this.state.mode === 'update'){
         _content = this.getReadContent();
-        _article = <UpdateContent onSubmit={function(_title, _desc){
+        _article = <UpdateContent data={_content} onSubmit={function(_title, _desc){
           //add content to this.state.contents
           this.max_content_id = this.max_content_id+1;
           console.log(_title, _desc);
@@ -67,6 +67,7 @@ class App extends Component {
           this.setState({
             contents:_contents
           });
+          console.log(_title, _desc);
         }.bind(this)}></UpdateContent>
       }
     return _article;
